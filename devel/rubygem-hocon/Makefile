@@ -5,7 +5,7 @@ PORTVERSION=	1.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	A Ruby port of the Typesafe Config library
 
 LICENSE=	APACHE20

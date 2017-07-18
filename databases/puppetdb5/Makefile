@@ -6,7 +6,7 @@ CATEGORIES=	databases java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppetdb/
 PKGNAMESUFFIX=	5
 
-MAINTAINER=	romain@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	PuppetDB storeconfigs backend
 
 LICENSE=	APACHE20
