@@ -4,7 +4,7 @@ PORTNAME=	cpp-hocon
 PORTVERSION=	0.1.5
 CATEGORIES=	devel
 
-MAINTAINER=	jslagle@gmail.com
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	C++ configuration library
 
 LICENSE=	APACHE20

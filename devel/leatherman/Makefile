@@ -4,7 +4,7 @@ PORTNAME=	leatherman
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
 
-MAINTAINER=	jslagle@gmail.com
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Leatherman C++ Tool library
 
 LICENSE=	APACHE20
