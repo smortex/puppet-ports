@@ -5,7 +5,7 @@ PORTVERSION=	3.7.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Cross-platform library for retrieving facts from OS
 
 LICENSE=	APACHE20
