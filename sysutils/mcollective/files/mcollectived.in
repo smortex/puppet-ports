@@ -27,4 +27,6 @@ command="%%PREFIX%%/sbin/${name}"
 command_args="-p $pidfile"
 command_interpreter=%%RUBY%%
 
+PATH="${PATH}:/usr/local/bin"
+
 run_rc_command "$1"

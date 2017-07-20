@@ -30,4 +30,6 @@ unset puppet_flags
 pidfile="${puppet_rundir}/agent.pid"
 start_precmd="install -d -o puppet -g puppet ${pidfile%/*}"
 
+PATH="${PATH}:/usr/local/bin"
+
 run_rc_command "$1"
