@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/rubygem-facter/Makefile 444251 2017-06-25 00:29:09Z linimon $
 
 PORTNAME=	facter
-PORTVERSION=	2.4.6
+PORTVERSION=	2.5.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG \
 		http://downloads.puppetlabs.com/facter/
