@@ -1,7 +1,7 @@
 # $FreeBSD: head/sysutils/facter/Makefile 441494 2017-05-22 22:29:17Z linimon $
 
 PORTNAME=	facter
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/facter/
 
