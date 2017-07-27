@@ -22,7 +22,7 @@ PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 USE_LDCONFIG=	yes
 USE_RUBY=	yes
-USES=	cmake compiler:c++11-lib
+USES=	cmake compiler:c++11-lib ssl
 CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man
 
 test: build
