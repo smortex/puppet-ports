@@ -16,6 +16,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=SHARED
 TEST_TARGET=	test
 USES=		cmake
