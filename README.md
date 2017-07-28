@@ -22,9 +22,7 @@ New ports for:
 
 Updates for:
 
-* devel/cpp-hocon ([ports/220601](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220601))
-* devel/leatherman ([ports/220471](https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=220471))
-* sysutils/facter (a bunch of patches not merged upstream yet)
+* sysutils/facter (a bunch of patches not released upstream yet)
 
 Conflicts updates for:
 
