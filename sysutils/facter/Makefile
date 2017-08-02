@@ -15,12 +15,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake
 
 .if !defined(PKGNAMEPREFIX)
+
+BROKEN_DragonFly=	DragonFly is not supported upstream
+BROKEN_powerpc64=	fails to compile: collection.cc: 'stoi' was not declared in this scope
+
+CONFLICTS_INSTALL=	rubygem-facter-2*
+
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		liblibcpp-hocon.so:devel/cpp-hocon \
 		libleatherman_locale.so:devel/leatherman \
 		libyaml-cpp.so:devel/yaml-cpp
-
-BROKEN_powerpc64=	fails to compile: collection.cc: 'stoi' was not declared in this scope
 
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
@@ -33,10 +37,8 @@ test: build
 	cd ${WRKSRC}/lib && bundle install --path vendor
 	cd ${WRKSRC} && ${MAKE} test
 
-CONFLICTS_INSTALL=	rubygem-facter-2*
-
-BROKEN_DragonFly=	DragonFly is not supported upstream
 .elif ${PKGNAMEPREFIX} == java-
+
 LIB_DEPENDS=	libfacter.so:sysutils/facter
 
 ALL_TARGET=	facter-jruby
