@@ -4,6 +4,7 @@ PORTNAME=	puppetserver
 PORTVERSION=	5.0.0
 CATEGORIES=	sysutils java
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
+PKGNAMESUFFIX=	5
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Puppet Server running in the JVM
@@ -46,7 +47,8 @@ post-patch:
 	ext/config/conf.d/global.conf ext/config/conf.d/puppetserver.conf \
 	ext/config/conf.d/web-routes.conf ext/config/conf.d/webserver.conf \
 	ext/config/conf.d/auth.conf ext/config/services.d/ca.cfg \
-	ext/system-config/services.d/bootstrap.cfg ext/bin/puppetserver
+	ext/system-config/services.d/bootstrap.cfg ext/bin/puppetserver \
+	ext/cli_defaults/cli-defaults.sh
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|%%RUBY_SITELIBDIR%%|${RUBY_SITELIBDIR}|" ${WRKSRC}/${file}
 	@${REINPLACE_CMD} -e "s|%%RUBY_VER%%|${RUBY_VER}|" ${WRKSRC}/${file}
@@ -85,5 +87,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/ruby ${STAGEDIR}${DATADIR}/cli/apps/ruby
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/start ${STAGEDIR}${DATADIR}/cli/apps/start
 	${INSTALL_DATA} ${WRKSRC}/ext/cli/stop ${STAGEDIR}${DATADIR}/cli/apps/stop
+	${INSTALL_DATA} ${WRKSRC}/ext/cli_defaults/cli-defaults.sh ${STAGEDIR}${DATADIR}/cli/cli-defaults.sh
 
 .include <bsd.port.mk>

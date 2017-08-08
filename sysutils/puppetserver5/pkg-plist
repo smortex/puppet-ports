@@ -20,6 +20,7 @@
 @(,,755) %%DATADIR%%/cli/apps/gem
 @(,,755) %%DATADIR%%/cli/apps/irb
 @(,,755) %%DATADIR%%/cli/apps/ruby
+@(,,755) %%DATADIR%%/cli/cli-defaults.sh
 @(,,755) %%DATADIR%%/ezbake-functions.sh
 @dir(puppet,puppet,750) /var/log/puppetserver
 @dir(puppet,puppet,755) /var/puppet
