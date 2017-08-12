@@ -35,7 +35,7 @@ CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man
 
 test: build
 	cd ${WRKSRC}/lib && bundle install --path vendor
-	cd ${WRKSRC} && ${MAKE} test
+	cd ${WRKSRC} && ninja test
 
 .elif ${PKGNAMEPREFIX} == java-
 
