@@ -33,6 +33,9 @@ USE_RUBY=	yes
 USES+=		compiler:c++11-lib ssl
 CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man
 
+post-patch:
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/lib/src/facts/posix/collection.cc
+
 test: build
 	cd ${WRKSRC}/lib && bundle install --path vendor
 	cd ${WRKSRC} && ninja test

@@ -7,8 +7,8 @@ $FreeBSD$
              directories.emplace_back("/opt/puppetlabs/facter/facts.d");
              directories.emplace_back("/etc/facter/facts.d");
              directories.emplace_back("/etc/puppetlabs/facter/facts.d");
-+            directories.emplace_back("/usr/local/etc/facter/facts.d");
-+            directories.emplace_back("/usr/local/etc/puppetlabs/facter/facts.d");
++            directories.emplace_back("%%PREFIX%%/etc/facter/facts.d");
++            directories.emplace_back("%%PREFIX%%/etc/puppetlabs/facter/facts.d");
          }
          return directories;
      }
