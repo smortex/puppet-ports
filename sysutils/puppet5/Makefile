@@ -1,7 +1,7 @@
 # $FreeBSD: head/sysutils/puppet5/Makefile 448484 2017-08-21 18:48:26Z romain $
 
 PORTNAME=	puppet
-PORTVERSION=	5.1.0
+PORTVERSION=	5.2.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 PKGNAMESUFFIX=	5
@@ -72,6 +72,8 @@ post-patch:
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
 	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
+	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./share/locale|/var/puppet/share/locales|" \
+		${WRKSRC}/lib/puppet.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		${WRKSRC}/ext/rack/config.ru
 
