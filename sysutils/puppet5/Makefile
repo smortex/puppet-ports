@@ -19,7 +19,7 @@ RUN_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
 
-USES=		cpe
+USES=		cpe gettext-tools
 CPE_VENDOR=	puppetlabs
 CONFLICTS_INSTALL=	puppet4-*
 NO_ARCH=	yes
@@ -72,14 +72,14 @@ post-patch:
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
 	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
-	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./share/locale|/var/puppet/share/locales|" \
-		${WRKSRC}/lib/puppet.rb
+	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./\.\./\.\./share/locale|/var/puppet/share/locale|" \
+		${WRKSRC}/lib/puppet/gettext/config.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		${WRKSRC}/ext/rack/config.ru
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
-		--localedir=/var/puppet/share/locales
+		--localedir=/var/puppet/share/locale
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
