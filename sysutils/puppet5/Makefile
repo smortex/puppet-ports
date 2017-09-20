@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-json_pure>=0:devel/rubygem-json_pure
-RUN_DEPENDS=	rubygem-hiera>=2.0:sysutils/rubygem-hiera \
+RUN_DEPENDS=	rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
+		rubygem-hiera>=2.0:sysutils/rubygem-hiera \
 		rubygem-hocon>=0:devel/rubygem-hocon \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
