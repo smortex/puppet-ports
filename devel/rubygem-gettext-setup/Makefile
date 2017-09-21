@@ -3,6 +3,7 @@
 
 PORTNAME=	gettext-setup
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
