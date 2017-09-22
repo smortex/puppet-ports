@@ -20,7 +20,7 @@ RUN_DEPENDS=	rubygem-gettext-setup>=0:devel/rubygem-gettext-setup \
 		rubygem-json_pure>=0:devel/rubygem-json_pure \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas
 
-USES=		cpe gettext-tools
+USES=		cpe
 CPE_VENDOR=	puppetlabs
 CONFLICTS_INSTALL=	puppet4-*
 NO_ARCH=	yes
