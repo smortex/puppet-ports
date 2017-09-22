@@ -73,14 +73,14 @@ post-patch:
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
 	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
-	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./\.\./\.\./share/locale|/var/puppet/share/locale|" \
+	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./locales|../locales|" \
 		${WRKSRC}/lib/puppet/gettext/config.rb
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" \
 		${WRKSRC}/ext/rack/config.ru
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
-		--localedir=/var/puppet/share/locale
+		--localedir=${RUBY_SITELIBDIR}/puppet/locales
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
