@@ -2,7 +2,7 @@
 # $FreeBSD: head/sysutils/mcollective/Makefile 448485 2017-08-21 18:48:48Z romain $
 
 PORTNAME=	mcollective
-PORTVERSION=	2.11.3
+PORTVERSION=	2.11.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/${PORTNAME}/
 
