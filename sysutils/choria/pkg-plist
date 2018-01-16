@@ -1,0 +1,2 @@
+bin/%%GO_PKGNAME%%
+@sample etc/choria/broker.conf.sample

@@ -47,10 +47,14 @@ GH_TUPLE+=	golang:sys:f7928cfef4d09d1b080aa2b6fd3ca9ba1567c733:golangsys/src/gol
 GH_TUPLE+=	alecthomas:kingpin:1087e65c9441605df944fb12c33f0fe7072d18ca:alecthomaskingpinv2/src/gopkg.in/alecthomas/kingpin.v2
 GH_TUPLE+=	go-yaml:yaml:287cf08546ab5e7e37d55a84f7ed3fd1db036de5:yamlv2/src/gopkg.in/yaml.v2
 
-PLIST_FILES=	bin/%%GO_PKGNAME%%
+USE_RC_SUBR=	choria_broker
+
+post-patch:
+	${REINPLACE_CMD} -e 's/{{pkgname}}/choria_broker/' \
+		${WRKSRC}/contrib/dist/broker.conf
 
 do-build:
-	@mkdir ${WRKSRC}/out
+	@${MKDIR} ${WRKSRC}/out
 	@cd ${GO_WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
 	    ${GO_CMD} build -v -x -ldflags '-X github.com/choria-io/go-choria/build.Version=${PORTVERSION}' \
@@ -58,5 +62,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
+	${INSTALL_DATA} ${WRKSRC}/contrib/dist/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
 
 .include <bsd.port.mk>
