@@ -53,7 +53,7 @@ do-build:
 	@mkdir ${WRKSRC}/out
 	@cd ${GO_WRKSRC} && \
 	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-	    ${GO_CMD} build -v -x \
+	    ${GO_CMD} build -v -x -ldflags '-X github.com/choria-io/go-choria/build.Version=${PORTVERSION}' \
 	    -o ${WRKSRC}/out/${PORTNAME}
 
 do-install:
