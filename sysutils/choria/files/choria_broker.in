@@ -14,6 +14,7 @@
 
 name="choria_broker"
 rcvar=`set_rcvar`
+pidfile="/var/run/${name}.pid"
 
 load_rc_config ${name}
 : ${choria_broker_enable="NO"}
@@ -21,6 +22,6 @@ load_rc_config ${name}
 
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/choria
-command_args="${procname} broker run ${choria_broker_options}"
+command_args="-p ${pidfile} ${procname} broker run ${choria_broker_options}"
 
 run_rc_command "$1"

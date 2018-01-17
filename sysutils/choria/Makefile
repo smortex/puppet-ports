@@ -47,7 +47,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		alecthomas:kingpin:1087e65c9441605df944fb12c33f0fe7072d18ca:alecthomaskingpinv2/src/gopkg.in/alecthomas/kingpin.v2 \
 		go-yaml:yaml:287cf08546ab5e7e37d55a84f7ed3fd1db036de5:yamlv2/src/gopkg.in/yaml.v2
 
-USE_RC_SUBR=	choria_broker
+USE_RC_SUBR=	choria_broker choria_server
 
 post-patch:
 	${REINPLACE_CMD} -e 's/{{pkgname}}/choria_broker/' \
