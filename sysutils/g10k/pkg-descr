@@ -1,0 +1,4 @@
+A go version of R10K (sysutils/rubygem-r10k) witch caching for deploying Puppet
+environments and modules.
+
+WWW: https://github.com/xorpaul/g10k
