@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.0.7
+PORTVERSION=	0.0.11
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -24,22 +24,22 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		choria-io:go-protocol:72bc3ca9593e692e55a3f5dda61194803f54d619:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
 		choria-io:go-validator:99e0f793dd701e8cf45fd27624390ea43699e3b9:choriaiogovalidator/src/github.com/choria-io/go-validator \
 		ghodss:yaml:0ca9ea5df5451ffdf184b4428c902747c2c11cd7:ghodssyaml/src/github.com/ghodss/yaml \
-		gogo:protobuf:26de2f9a7d3b1826f275e7a97c8cad5080589426:gogoprotobuf/src/github.com/gogo/protobuf \
-		golang:protobuf:1e59b77b52bf8e4b449a57e6f79f21226d571845:golangprotobuf/src/github.com/golang/protobuf \
+		gogo:protobuf:c0656edd0d9eab7c66d1eb0c568f9039345796f7:gogoprotobuf/src/github.com/gogo/protobuf \
+		golang:protobuf:1643683e1b54a9e88ad26d98f81400c8c9d9f4f9:golangprotobuf/src/github.com/golang/protobuf \
 		matttproud:golang_protobuf_extensions:c12348ce28de40eed0136aa2b644d0ee0650e56c:matttproudgolang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
-		nats-io:gnatsd:12a5ced612f30aa511906c0de12a124233752f70:natsiognatsd/src/github.com/nats-io/gnatsd \
+		nats-io:gnatsd:02dd205a481e8f9957f15ec2667e8b80bafecc14:natsiognatsd/src/github.com/nats-io/gnatsd \
 		nats-io:go-nats:d66cb54e6b7bdd93f0b28afc8450d84c780dfb68:natsiogonats/src/github.com/nats-io/go-nats \
-		nats-io:go-nats-streaming:ad2984cc18491c7674c7f69196b854fb71337738:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
+		nats-io:go-nats-streaming:6e620057a207bd61e992c1c5b6a2de7b6a4cb010:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
 		nats-io:nuid:33c603157d6fd1b0ac2599bcc4a286b36479a06d:natsionuid/src/github.com/nats-io/nuid \
 		onsi:ginkgo:77a8c1e5c40d6bb6c5eb4dd4bdce9763564f6298:onsiginkgo/src/github.com/onsi/ginkgo \
 		onsi:gomega:003f63b7f4cff3fc95357005358af2de0f5fe152:onsigomega/src/github.com/onsi/gomega \
-		prometheus:client_golang:06bc6e01f4baf4ee783ffcd23abfcb0b0f9dfada:prometheusclient_golang/src/github.com/prometheus/client_golang \
+		prometheus:client_golang:967789050ba94deca04a5e84cce8ad472ce313c1:prometheusclient_golang/src/github.com/prometheus/client_golang \
 		prometheus:client_model:99fa1f4be8e564e8a6b613da7fa6f46c9edafc6c:prometheusclient_model/src/github.com/prometheus/client_model \
 		prometheus:common:89604d197083d4781071d3c65855d24ecfb0a563:prometheuscommon/src/github.com/prometheus/common \
 		prometheus:procfs:b15cd069a83443be3154b719d0cc9fe8117f09fb:prometheusprocfs/src/github.com/prometheus/procfs \
 		satori:go.uuid:f58768cc1a7a7e77a3bd49e98cdd21419399b6a3:satorigouuid/src/github.com/satori/go.uuid \
 		sirupsen:logrus:d682213848ed68c0a260ca37d6dd5ace8423f5ba:sirupsenlogrus/src/github.com/sirupsen/logrus \
-		tidwall:gjson:e62d62a3e1e9f324346170bbc04333341f803dfb:tidwallgjson/src/github.com/tidwall/gjson \
+		tidwall:gjson:87033efcaec6215741137e8ca61952c53ef2685d:tidwallgjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
 		xeipuuv:gojsonpointer:6fe8760cad3569743d51ddbb243b26f8456742dc:xeipuuvgojsonpointer/src/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:e02fc20de94c78484cd5ffb007f8af96be030a45:xeipuuvgojsonreference/src/github.com/xeipuuv/gojsonreference \
