@@ -1,6 +1,6 @@
-TIMESTAMP = 1520506041
-SHA256 (choria-io-go-choria-0.0.11_GH0.tar.gz) = 026ec9a03480a150f2d94cc692813fe01e8286f44ce518d9d6d41750ddca02a0
-SIZE (choria-io-go-choria-0.0.11_GH0.tar.gz) = 91015
+TIMESTAMP = 1521975076
+SHA256 (choria-io-go-choria-0.1.0_GH0.tar.gz) = ac3458303a3967da2550cb8e2d698718a1567cbb3b63273e0b76e2a4d6d6098f
+SIZE (choria-io-go-choria-0.1.0_GH0.tar.gz) = 91411
 SHA256 (alecthomas-template-a0175ee3bccc567396460bf5acd36800cb10c49c_GH0.tar.gz) = 9c3c415442b29e8cd878173073c2601a0a71ee5563eb6d020616fc5b1d502b42
 SIZE (alecthomas-template-a0175ee3bccc567396460bf5acd36800cb10c49c_GH0.tar.gz) = 55291
 SHA256 (alecthomas-units-2efee857e7cfd4f3d0138cc3cbb1b4966962b93a_GH0.tar.gz) = 72a65249ad5ca6f56f6f40e132f176ccd7e725deef131e361910a9f484fb7cc0
