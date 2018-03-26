@@ -50,10 +50,10 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		alecthomas:kingpin:947dcec5ba9c011838740e680966fd7087a71d0d:alecthomaskingpinv2/src/gopkg.in/alecthomas/kingpin.v2 \
 		go-yaml:yaml:d670f9405373e636a5a2765eea47fac0c9bc91a4:yamlv2/src/gopkg.in/yaml.v2
 
-USE_RC_SUBR=	choria_broker choria_server
+USE_RC_SUBR=	choria-broker choria-server
 
 post-patch:
-	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria_broker/' \
+	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-broker/' \
 		${WRKSRC}/packager/templates/debian/global/broker.conf
 
 do-build:
