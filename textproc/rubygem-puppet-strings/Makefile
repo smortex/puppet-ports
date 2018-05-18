@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	puppet-strings
-PORTVERSION=	1.1.1
+PORTVERSION=	2.0.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
