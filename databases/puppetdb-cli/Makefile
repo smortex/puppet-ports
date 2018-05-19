@@ -49,7 +49,7 @@ CARGO_CRATES=	advapi32-sys-0.2.0 \
 		num_cpus-1.7.0 \
 		ole32-sys-0.2.0 \
 		openssl-0.9.22 \
-		openssl-sys-0.9.22 \
+		openssl-sys-0.9.30 \
 		percent-encoding-1.0.1 \
 		phf-0.7.21 \
 		phf_codegen-0.7.21 \
