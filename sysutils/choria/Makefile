@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.2.0
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
