@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -20,13 +20,15 @@ GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}
 GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthomastemplate/src/github.com/alecthomas/template \
 		alecthomas:units:2efee857e7cfd4f3d0138cc3cbb1b4966962b93a:alecthomasunits/src/github.com/alecthomas/units \
 		beorn7:perks:4c0e84591b9aa9e6dcfdf3e020114cd81f89d5f9:beorn7perks/src/github.com/beorn7/perks \
-		choria-io:go-client:58387294cadadd69e21972cecc10064e83f7ae8e:choriaiogoclient/src/github.com/choria-io/go-client \
+		choria-io:go-client:9f8afdf705fdf1e08ed970d8a61a52936205119c:choriaiogoclient/src/github.com/choria-io/go-client \
 		choria-io:go-confkey:634d2c41860498507b0c7eeb2f8a33b1aa6a809d:choriaiogoconfkey/src/github.com/choria-io/go-confkey \
+		choria-io:go-mcoshim:f92bd7733a5af67ff1e51bcb586f72464b7a3d12:choriaiogomcoshim/src/github.com/choria-io/go-mcoshim \
 		choria-io:go-network-broker:fb996d344cb1b1d368517bb2071ace03372da0ba:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
-		choria-io:go-protocol:284592cb18f97f9854a797f6147142cc5ddc551c:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
+		choria-io:go-protocol:c3117476636777d60c00a86b2d4b2b8fc56addb4:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
 		choria-io:go-security:a221c72ee79ab400346d38837d7e8b289857247b:choriaiogosecurity/src/github.com/choria-io/go-security \
 		choria-io:go-validator:4ce2ef25983faa873cc4bcea0f1ef2a4273d42cc:choriaiogovalidator/src/github.com/choria-io/go-validator \
-		choria-io:mcorpc-agent-provider:33fa69cae7f6be38513efd52e51a24553758bda6:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
+		choria-io:mcorpc-agent-provider:98d3c43c6d31f93a0713c5cc03901d0afa8246e3:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
+		choria-io:provisioning-agent:8118f60f9f4f3ed3c3119bf2164519378d431dbe:choriaioprovisioningagent/src/github.com/choria-io/provisioning-agent \
 		ghodss:yaml:0ca9ea5df5451ffdf184b4428c902747c2c11cd7:ghodssyaml/src/github.com/ghodss/yaml \
 		gogo:protobuf:99cb9b23110011cc45571c901ecae6f6f5e65cd3:gogoprotobuf/src/github.com/gogo/protobuf \
 		golang:mock:8b2eeeb0ca5f56c78bec5efde9c4a21d9201126c:golangmock/src/github.com/golang/mock \
@@ -43,7 +45,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		prometheus:common:89604d197083d4781071d3c65855d24ecfb0a563:prometheuscommon/src/github.com/prometheus/common \
 		prometheus:procfs:b15cd069a83443be3154b719d0cc9fe8117f09fb:prometheusprocfs/src/github.com/prometheus/procfs \
 		satori:go.uuid:f58768cc1a7a7e77a3bd49e98cdd21419399b6a3:satorigouuid/src/github.com/satori/go.uuid \
-		sirupsen:logrus:c155da19408a8799da419ed3eeb0cb5db0ad5dbc:sirupsenlogrus/src/github.com/sirupsen/logrus \
+		sirupsen:logrus:3e01752db0189b9157070a0e1668a620f9a85da2:sirupsenlogrus/src/github.com/sirupsen/logrus \
 		tidwall:gjson:01f00f129617a6fe98941fb920d6c760241b54d2:tidwallgjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
 		xeipuuv:gojsonpointer:6fe8760cad3569743d51ddbb243b26f8456742dc:xeipuuvgojsonpointer/src/github.com/xeipuuv/gojsonpointer \
