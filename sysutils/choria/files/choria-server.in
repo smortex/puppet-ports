@@ -24,4 +24,6 @@ command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/choria
 command_args="-p ${pidfile} ${procname} server run ${choria_server_options}"
 
+PATH="${PATH}:%%PREFIX%%/bin"
+
 run_rc_command "$1"
