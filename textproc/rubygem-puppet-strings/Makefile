@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_RUBY=	yes
 USES=		gem
 
-RUN_DEPENDS=	puppet5>=0:sysutils/puppet5 \
+RUN_DEPENDS=	puppet6>=0:sysutils/puppet6 \
 		rubygem-rgen>=0:devel/rubygem-rgen \
 		rubygem-yard>=0:textproc/rubygem-yard
 
