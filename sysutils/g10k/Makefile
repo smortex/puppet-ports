@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	g10k
-PORTVERSION=	0.4.4
+PORTVERSION=	0.5.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	puppet@FreeBSD.org
