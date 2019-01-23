@@ -1,4 +1,4 @@
-# WIP FreeBSD Puppet 5 ports
+# WIP FreeBSD Puppet ports
 
 This repository contains ports that are not yet available in the FreeBSD ports tree.
 
