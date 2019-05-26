@@ -1,4 +1,4 @@
-TIMESTAMP = 1558837207
+TIMESTAMP = 1558838142
 SHA256 (choria-io-go-choria-0.10.1_GH0.tar.gz) = d41948b1a950f301a8d0572a2c050ee30a2d2f70bbaf173ffe69af94fe286b06
 SIZE (choria-io-go-choria-0.10.1_GH0.tar.gz) = 108866
 SHA256 (alecthomas-template-a0175ee3bccc567396460bf5acd36800cb10c49c_GH0.tar.gz) = 9c3c415442b29e8cd878173073c2601a0a71ee5563eb6d020616fc5b1d502b42
@@ -43,8 +43,8 @@ SHA256 (konsorten-go-windows-terminal-sequences-5c8c8bd35d3832f5d134ae1e1e375b69
 SIZE (konsorten-go-windows-terminal-sequences-5c8c8bd35d3832f5d134ae1e1e375b69a4d25242_GH0.tar.gz) = 1901
 SHA256 (matttproud-golang_protobuf_extensions-c12348ce28de40eed0136aa2b644d0ee0650e56c_GH0.tar.gz) = f373f9acadebba162ced5d544db0125088b9733510ca9cd51ae8f2d653e11804
 SIZE (matttproud-golang_protobuf_extensions-c12348ce28de40eed0136aa2b644d0ee0650e56c_GH0.tar.gz) = 37215
-SHA256 (nats-io-gnatsd-f2bd68be4093f0c2ba3bd70dac8aac8011c6f393_GH0.tar.gz) = f4b4fc6db2b309183f314bbdeafa8a9490a12ac923dc05f3d780249f379a3823
-SIZE (nats-io-gnatsd-f2bd68be4093f0c2ba3bd70dac8aac8011c6f393_GH0.tar.gz) = 383366
+SHA256 (nats-io-nats-server-f2bd68be4093f0c2ba3bd70dac8aac8011c6f393_GH0.tar.gz) = f4b4fc6db2b309183f314bbdeafa8a9490a12ac923dc05f3d780249f379a3823
+SIZE (nats-io-nats-server-f2bd68be4093f0c2ba3bd70dac8aac8011c6f393_GH0.tar.gz) = 383366
 SHA256 (nats-io-go-nats-fb0396ee0bdb8018b0fef30d6d1de798ce99cd05_GH0.tar.gz) = 9bcb30ebce9e1a99181c095ea2db8da5505457312cd2b79251d30275730ae764
 SIZE (nats-io-go-nats-fb0396ee0bdb8018b0fef30d6d1de798ce99cd05_GH0.tar.gz) = 106972
 SHA256 (nats-io-go-nats-streaming-e15a53f85e4932540600a16b56f6c4f65f58176f_GH0.tar.gz) = 655a6f5d54580f428137584061eac36f3417853e2b4dbe89579d545a244e4da9
