@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		choria-io:go-confkey:634d2c41860498507b0c7eeb2f8a33b1aa6a809d:choriaiogoconfkey/src/github.com/choria-io/go-confkey \
 		choria-io:go-lifecycle:1abefec262bec96f9581d76f3270c86121356d02:choriaiogolifecycle/src/github.com/choria-io/go-lifecycle \
 		choria-io:go-mcoshim:f92bd7733a5af67ff1e51bcb586f72464b7a3d12:choriaiogomcoshim/src/github.com/choria-io/go-mcoshim \
-		choria-io:go-network-broker:52f5e064f2af6e1b78855cac669924fc0e54edcd:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
+		choria-io:go-network-broker:c141921ee74adeb58a9312ae2ba4cbb54e8d5a0c:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
 		choria-io:go-protocol:c3117476636777d60c00a86b2d4b2b8fc56addb4:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
 		choria-io:go-security:b259ec5ee20647587b1f8a9b1316b333de4ce3ad:choriaiogosecurity/src/github.com/choria-io/go-security \
 		choria-io:go-updater:2e95f9965f469b7b1dcba5b3ea16033413e4273e:choriaiogoupdater/src/github.com/choria-io/go-updater \
@@ -38,7 +38,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		golang:protobuf:52132540909e117f2b98b0694383dc0ab1e1deca:golangprotobuf/src/github.com/golang/protobuf \
 		konsorten:go-windows-terminal-sequences:5c8c8bd35d3832f5d134ae1e1e375b69a4d25242:konsortengowindowsterminalsequences/src/github.com/konsorten/go-windows-terminal-sequences \
 		matttproud:golang_protobuf_extensions:c12348ce28de40eed0136aa2b644d0ee0650e56c:matttproudgolang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
-		nats-io:gnatsd:ce2df36122805cfcf7fd996698f9389d1926c32b:natsiognatsd/src/github.com/nats-io/gnatsd \
+		nats-io:gnatsd:f2bd68be4093f0c2ba3bd70dac8aac8011c6f393:natsiognatsd/src/github.com/nats-io/gnatsd \
 		nats-io:go-nats:fb0396ee0bdb8018b0fef30d6d1de798ce99cd05:natsiogonats/src/github.com/nats-io/go-nats \
 		nats-io:go-nats-streaming:e15a53f85e4932540600a16b56f6c4f65f58176f:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
 		nats-io:nuid:28b996b57a46dd0c2aa3a3dc7fa8780878331d00:natsionuid/src/github.com/nats-io/nuid \
@@ -49,7 +49,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		prometheus:common:61f87aac8082fa8c3c5655c7608d7478d46ac2ad:prometheuscommon/src/github.com/prometheus/common \
 		prometheus:procfs:185b4288413d2a0dd0806f78c90dde719829e5ae:prometheusprocfs/src/github.com/prometheus/procfs \
 		sirupsen:logrus:e1e72e9de974bd926e5c56f83753fba2df402ce5:sirupsenlogrus/src/github.com/sirupsen/logrus \
-		tidwall:gjson:081192fa2e471ddff3ec98a3cc04fecfd031ed57:tidwallgjson/src/github.com/tidwall/gjson \
+		tidwall:gjson:5a96cfda705e1762dc0671e26b0b78925ad97e29:tidwallgjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
 		xeipuuv:gojsonpointer:4e3ac2762d5f479393488629ee9370b50873b3a6:xeipuuvgojsonpointer/src/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:bd5ef7bd5415a7ac448318e64f11a24cd21e594b:xeipuuvgojsonreference/src/github.com/xeipuuv/gojsonreference \
