@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -26,38 +26,42 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		choria-io:go-mcoshim:f92bd7733a5af67ff1e51bcb586f72464b7a3d12:choriaiogomcoshim/src/github.com/choria-io/go-mcoshim \
 		choria-io:go-network-broker:c141921ee74adeb58a9312ae2ba4cbb54e8d5a0c:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
 		choria-io:go-protocol:c3117476636777d60c00a86b2d4b2b8fc56addb4:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
-		choria-io:go-security:b259ec5ee20647587b1f8a9b1316b333de4ce3ad:choriaiogosecurity/src/github.com/choria-io/go-security \
+		choria-io:go-security:20b0225a2d5503d1a583518cea788902be351cb0:choriaiogosecurity/src/github.com/choria-io/go-security \
 		choria-io:go-updater:2e95f9965f469b7b1dcba5b3ea16033413e4273e:choriaiogoupdater/src/github.com/choria-io/go-updater \
 		choria-io:go-validator:4ce2ef25983faa873cc4bcea0f1ef2a4273d42cc:choriaiogovalidator/src/github.com/choria-io/go-validator \
-		choria-io:mcorpc-agent-provider:2fb55be47a487f0e8f4c86ed995c5645b8cc4952:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
-		choria-io:provisioning-agent:a0ed5f38d6d4633a008f8ceb38443041dcebbffa:choriaioprovisioningagent/src/github.com/choria-io/provisioning-agent \
+		choria-io:mcorpc-agent-provider:d2470e28440e64a4fce5ab45d50e0389e4efb559:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
+		choria-io:provisioning-agent:38d1a63e87497f4f5703b941f688144d9fa23e1d:choriaioprovisioningagent/src/github.com/choria-io/provisioning-agent \
 		ghodss:yaml:0ca9ea5df5451ffdf184b4428c902747c2c11cd7:ghodssyaml/src/github.com/ghodss/yaml \
 		gofrs:uuid:6b08a5c5172ba18946672b49749cde22873dd7c2:gofrsuuid/src/github.com/gofrs/uuid \
 		gogo:protobuf:99cb9b23110011cc45571c901ecae6f6f5e65cd3:gogoprotobuf/src/github.com/gogo/protobuf \
 		golang:mock:8b2eeeb0ca5f56c78bec5efde9c4a21d9201126c:golangmock/src/github.com/golang/mock \
 		golang:protobuf:52132540909e117f2b98b0694383dc0ab1e1deca:golangprotobuf/src/github.com/golang/protobuf \
+		google:shlex:c34317bd91bf98fab745d77b03933cf8769299fe:googleshlex/src/github.com/google/shlex \
 		konsorten:go-windows-terminal-sequences:5c8c8bd35d3832f5d134ae1e1e375b69a4d25242:konsortengowindowsterminalsequences/src/github.com/konsorten/go-windows-terminal-sequences \
+		looplab:fsm:84b5307469f859464403f80919467950a79de1b1:looplabfsm/src/github.com/looplab/fsm \
 		matttproud:golang_protobuf_extensions:c12348ce28de40eed0136aa2b644d0ee0650e56c:matttproudgolang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
 		nats-io:nats-server:f2bd68be4093f0c2ba3bd70dac8aac8011c6f393:natsiognatsd/src/github.com/nats-io/gnatsd \
 		nats-io:go-nats:fb0396ee0bdb8018b0fef30d6d1de798ce99cd05:natsiogonats/src/github.com/nats-io/go-nats \
-		nats-io:go-nats-streaming:e15a53f85e4932540600a16b56f6c4f65f58176f:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
+		nats-io:stan.go:7cd94c239033c0405a43454be55a0810d3a3ca89:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
 		nats-io:nuid:28b996b57a46dd0c2aa3a3dc7fa8780878331d00:natsionuid/src/github.com/nats-io/nuid \
-		onsi:ginkgo:2e1be8f7d90e9d3e3e58b0ce470f2f14d075406f:onsiginkgo/src/github.com/onsi/ginkgo \
-		onsi:gomega:65fb64232476ad9046e57c26cd0bff3d3a8dc6cd:onsigomega/src/github.com/onsi/gomega \
+		onsi:ginkgo:eea6ad008b96acdaa524f5b409513bf062b500ad:onsiginkgo/src/github.com/onsi/ginkgo \
+		onsi:gomega:90e289841c1ed79b7a598a7cd9959750cb5e89e2:onsigomega/src/github.com/onsi/gomega \
+		pkg:errors:ba968bfe8b2f7e042a574c888954fccecfa385b4:pkgerrors/src/github.com/pkg/errors \
 		prometheus:client_golang:505eaef017263e299324067d40ca2c48f6a2cf50:prometheusclient_golang/src/github.com/prometheus/client_golang \
 		prometheus:client_model:5c3871d89910bfb32f5fcab2aa4b9ec68e65a99f:prometheusclient_model/src/github.com/prometheus/client_model \
 		prometheus:common:61f87aac8082fa8c3c5655c7608d7478d46ac2ad:prometheuscommon/src/github.com/prometheus/common \
 		prometheus:procfs:185b4288413d2a0dd0806f78c90dde719829e5ae:prometheusprocfs/src/github.com/prometheus/procfs \
 		sirupsen:logrus:e1e72e9de974bd926e5c56f83753fba2df402ce5:sirupsenlogrus/src/github.com/sirupsen/logrus \
-		tidwall:gjson:5a96cfda705e1762dc0671e26b0b78925ad97e29:tidwallgjson/src/github.com/tidwall/gjson \
+		tidwall:gjson:eee0b6226f0d1db2675a176fdfaa8419bcad4ca8:tidwallgjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
+		tidwall:pretty:1166b9ac2b65e46a43d8618d30d1554f4652d49b:tidwallpretty/src/github.com/tidwall/pretty \
 		xeipuuv:gojsonpointer:4e3ac2762d5f479393488629ee9370b50873b3a6:xeipuuvgojsonpointer/src/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:bd5ef7bd5415a7ac448318e64f11a24cd21e594b:xeipuuvgojsonreference/src/github.com/xeipuuv/gojsonreference \
 		xeipuuv:gojsonschema:f3a9dae5b19473510a3062802a98815f609ed747:xeipuuvgojsonschema/src/github.com/xeipuuv/gojsonschema \
-		uber-go:atomic:1ea20fb1cbb1cc08cbd0d913a96dead89aa18289:atomic/src/go.uber.org/atomic/ \
-		golang:crypto:9477e0b78b9ac3d0b03822fd95422e2fe07627cd:golangcrypto/src/golang.org/x/crypto \
+		uber-go:atomic:df976f2515e274675050de7b3f42545de80594fd:atomic/src/go.uber.org/atomic/ \
+		golang:crypto:22d7a77e9e5f409e934ed268692e56707cd169e5:golangcrypto/src/golang.org/x/crypto \
 		golang:net:adae6a3d119ae4890b46832a2e88a95adc62b8e7:golangnet/src/golang.org/x/net \
-		golang:sys:f7928cfef4d09d1b080aa2b6fd3ca9ba1567c733:golangsys/src/golang.org/x/sys \
+		golang:sys:a5b02f93d862f065920dd6a40dddc66b60d0dec4:golangsys/src/golang.org/x/sys \
 		alecthomas:kingpin:947dcec5ba9c011838740e680966fd7087a71d0d:alecthomaskingpinv2/src/gopkg.in/alecthomas/kingpin.v2 \
 		go-yaml:yaml:5420a8b6744d3b0345ab293f6fcba19c978f1183:yamlv2/src/gopkg.in/yaml.v2
 
