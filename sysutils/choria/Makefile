@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		choria-io:go-mcoshim:f92bd7733a5af67ff1e51bcb586f72464b7a3d12:choriaiogomcoshim/src/github.com/choria-io/go-mcoshim \
 		choria-io:go-network-broker:c141921ee74adeb58a9312ae2ba4cbb54e8d5a0c:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
 		choria-io:go-protocol:c3117476636777d60c00a86b2d4b2b8fc56addb4:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
-		choria-io:go-security:20b0225a2d5503d1a583518cea788902be351cb0:choriaiogosecurity/src/github.com/choria-io/go-security \
+		choria-io:go-security:3bb3b37e23b5fa925edd54d17a7b90f5305885d8:choriaiogosecurity/src/github.com/choria-io/go-security \
 		choria-io:go-updater:2e95f9965f469b7b1dcba5b3ea16033413e4273e:choriaiogoupdater/src/github.com/choria-io/go-updater \
 		choria-io:go-validator:4ce2ef25983faa873cc4bcea0f1ef2a4273d42cc:choriaiogovalidator/src/github.com/choria-io/go-validator \
 		choria-io:mcorpc-agent-provider:d2470e28440e64a4fce5ab45d50e0389e4efb559:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
@@ -51,6 +51,7 @@ GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthom
 		prometheus:client_model:5c3871d89910bfb32f5fcab2aa4b9ec68e65a99f:prometheusclient_model/src/github.com/prometheus/client_model \
 		prometheus:common:61f87aac8082fa8c3c5655c7608d7478d46ac2ad:prometheuscommon/src/github.com/prometheus/common \
 		prometheus:procfs:185b4288413d2a0dd0806f78c90dde719829e5ae:prometheusprocfs/src/github.com/prometheus/procfs \
+		robfig:cron:b41be1df696709bb6395fe435af20370037c0b4c:robfigcron/src/github.com/robfig/cron \
 		sirupsen:logrus:e1e72e9de974bd926e5c56f83753fba2df402ce5:sirupsenlogrus/src/github.com/sirupsen/logrus \
 		tidwall:gjson:eee0b6226f0d1db2675a176fdfaa8419bcad4ca8:tidwallgjson/src/github.com/tidwall/gjson \
 		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
