@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.11.1
+DISTVERSIONPREFIX=v
+PORTVERSION=	0.12.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -10,61 +11,86 @@ COMMENT=	Server to host Choria agents, networks, federations and discovery
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go
+USES=		go:modules
+
+BROKEN=		Does not build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	choria-io
 GH_PROJECT=	go-choria
-GH_SUBDIR=	src/github.com/${GH_ACCOUNT_DEFAULT}/${GH_PROJECT}
 
-GH_TUPLE+=	alecthomas:template:a0175ee3bccc567396460bf5acd36800cb10c49c:alecthomastemplate/src/github.com/alecthomas/template \
-		alecthomas:units:2efee857e7cfd4f3d0138cc3cbb1b4966962b93a:alecthomasunits/src/github.com/alecthomas/units \
-		beorn7:perks:3a771d992973f24aa725d07868b467d1ddfceafb:beorn7perks/src/github.com/beorn7/perks \
-		choria-io:go-client:54bcd877b6c6d9c8bc96863910f2f32b67b081d1:choriaiogoclient/src/github.com/choria-io/go-client \
-		choria-io:go-confkey:634d2c41860498507b0c7eeb2f8a33b1aa6a809d:choriaiogoconfkey/src/github.com/choria-io/go-confkey \
-		choria-io:go-lifecycle:1abefec262bec96f9581d76f3270c86121356d02:choriaiogolifecycle/src/github.com/choria-io/go-lifecycle \
-		choria-io:go-mcoshim:f92bd7733a5af67ff1e51bcb586f72464b7a3d12:choriaiogomcoshim/src/github.com/choria-io/go-mcoshim \
-		choria-io:go-network-broker:c141921ee74adeb58a9312ae2ba4cbb54e8d5a0c:choriaiogonetworkbroker/src/github.com/choria-io/go-network-broker \
-		choria-io:go-protocol:c3117476636777d60c00a86b2d4b2b8fc56addb4:choriaiogoprotocol/src/github.com/choria-io/go-protocol \
-		choria-io:go-security:3bb3b37e23b5fa925edd54d17a7b90f5305885d8:choriaiogosecurity/src/github.com/choria-io/go-security \
-		choria-io:go-updater:2e95f9965f469b7b1dcba5b3ea16033413e4273e:choriaiogoupdater/src/github.com/choria-io/go-updater \
-		choria-io:go-validator:4ce2ef25983faa873cc4bcea0f1ef2a4273d42cc:choriaiogovalidator/src/github.com/choria-io/go-validator \
-		choria-io:mcorpc-agent-provider:d2470e28440e64a4fce5ab45d50e0389e4efb559:choriaiomcorpcagentprovider/src/github.com/choria-io/mcorpc-agent-provider \
-		choria-io:provisioning-agent:38d1a63e87497f4f5703b941f688144d9fa23e1d:choriaioprovisioningagent/src/github.com/choria-io/provisioning-agent \
-		ghodss:yaml:0ca9ea5df5451ffdf184b4428c902747c2c11cd7:ghodssyaml/src/github.com/ghodss/yaml \
-		gofrs:uuid:6b08a5c5172ba18946672b49749cde22873dd7c2:gofrsuuid/src/github.com/gofrs/uuid \
-		gogo:protobuf:99cb9b23110011cc45571c901ecae6f6f5e65cd3:gogoprotobuf/src/github.com/gogo/protobuf \
-		golang:mock:8b2eeeb0ca5f56c78bec5efde9c4a21d9201126c:golangmock/src/github.com/golang/mock \
-		golang:protobuf:52132540909e117f2b98b0694383dc0ab1e1deca:golangprotobuf/src/github.com/golang/protobuf \
-		google:shlex:c34317bd91bf98fab745d77b03933cf8769299fe:googleshlex/src/github.com/google/shlex \
-		konsorten:go-windows-terminal-sequences:5c8c8bd35d3832f5d134ae1e1e375b69a4d25242:konsortengowindowsterminalsequences/src/github.com/konsorten/go-windows-terminal-sequences \
-		looplab:fsm:84b5307469f859464403f80919467950a79de1b1:looplabfsm/src/github.com/looplab/fsm \
-		matttproud:golang_protobuf_extensions:c12348ce28de40eed0136aa2b644d0ee0650e56c:matttproudgolang_protobuf_extensions/src/github.com/matttproud/golang_protobuf_extensions \
-		nats-io:nats-server:f2bd68be4093f0c2ba3bd70dac8aac8011c6f393:natsiognatsd/src/github.com/nats-io/gnatsd \
-		nats-io:go-nats:fb0396ee0bdb8018b0fef30d6d1de798ce99cd05:natsiogonats/src/github.com/nats-io/go-nats \
-		nats-io:stan.go:7cd94c239033c0405a43454be55a0810d3a3ca89:natsiogonatsstreaming/src/github.com/nats-io/go-nats-streaming \
-		nats-io:nuid:28b996b57a46dd0c2aa3a3dc7fa8780878331d00:natsionuid/src/github.com/nats-io/nuid \
-		onsi:ginkgo:eea6ad008b96acdaa524f5b409513bf062b500ad:onsiginkgo/src/github.com/onsi/ginkgo \
-		onsi:gomega:90e289841c1ed79b7a598a7cd9959750cb5e89e2:onsigomega/src/github.com/onsi/gomega \
-		pkg:errors:ba968bfe8b2f7e042a574c888954fccecfa385b4:pkgerrors/src/github.com/pkg/errors \
-		prometheus:client_golang:505eaef017263e299324067d40ca2c48f6a2cf50:prometheusclient_golang/src/github.com/prometheus/client_golang \
-		prometheus:client_model:5c3871d89910bfb32f5fcab2aa4b9ec68e65a99f:prometheusclient_model/src/github.com/prometheus/client_model \
-		prometheus:common:61f87aac8082fa8c3c5655c7608d7478d46ac2ad:prometheuscommon/src/github.com/prometheus/common \
-		prometheus:procfs:185b4288413d2a0dd0806f78c90dde719829e5ae:prometheusprocfs/src/github.com/prometheus/procfs \
-		robfig:cron:b41be1df696709bb6395fe435af20370037c0b4c:robfigcron/src/github.com/robfig/cron \
-		sirupsen:logrus:e1e72e9de974bd926e5c56f83753fba2df402ce5:sirupsenlogrus/src/github.com/sirupsen/logrus \
-		tidwall:gjson:eee0b6226f0d1db2675a176fdfaa8419bcad4ca8:tidwallgjson/src/github.com/tidwall/gjson \
-		tidwall:match:1731857f09b1f38450e2c12409748407822dc6be:tidwallmatch/src/github.com/tidwall/match \
-		tidwall:pretty:1166b9ac2b65e46a43d8618d30d1554f4652d49b:tidwallpretty/src/github.com/tidwall/pretty \
-		xeipuuv:gojsonpointer:4e3ac2762d5f479393488629ee9370b50873b3a6:xeipuuvgojsonpointer/src/github.com/xeipuuv/gojsonpointer \
-		xeipuuv:gojsonreference:bd5ef7bd5415a7ac448318e64f11a24cd21e594b:xeipuuvgojsonreference/src/github.com/xeipuuv/gojsonreference \
-		xeipuuv:gojsonschema:f3a9dae5b19473510a3062802a98815f609ed747:xeipuuvgojsonschema/src/github.com/xeipuuv/gojsonschema \
-		uber-go:atomic:df976f2515e274675050de7b3f42545de80594fd:atomic/src/go.uber.org/atomic/ \
-		golang:crypto:22d7a77e9e5f409e934ed268692e56707cd169e5:golangcrypto/src/golang.org/x/crypto \
-		golang:net:adae6a3d119ae4890b46832a2e88a95adc62b8e7:golangnet/src/golang.org/x/net \
-		golang:sys:a5b02f93d862f065920dd6a40dddc66b60d0dec4:golangsys/src/golang.org/x/sys \
-		alecthomas:kingpin:947dcec5ba9c011838740e680966fd7087a71d0d:alecthomaskingpinv2/src/gopkg.in/alecthomas/kingpin.v2 \
-		go-yaml:yaml:5420a8b6744d3b0345ab293f6fcba19c978f1183:yamlv2/src/gopkg.in/yaml.v2
+GH_TUPLE=	\
+		AlecAivazis:survey:v1.7.0:alecaivazis_survey/vendor/github.com/AlecAivazis/survey \
+		AlecAivazis:survey:v1.7.0:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
+		AlecAivazis:survey:v2.0.2:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
+		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
+		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
+		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
+		apex:log:v1.1.1:apex_log/vendor/github.com/apex/log \
+		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
+		choria-io:go-client:v0.5.0:choria_io_go_client/vendor/github.com/choria-io/go-client \
+		choria-io:go-config:v0.0.3:choria_io_go_config/vendor/github.com/choria-io/go-config \
+		choria-io:go-confkey:v1.3.0:choria_io_go_confkey/vendor/github.com/choria-io/go-confkey \
+		choria-io:go-lifecycle:v1.0.3:choria_io_go_lifecycle/vendor/github.com/choria-io/go-lifecycle \
+		choria-io:go-network-broker:v1.3.1:choria_io_go_network_broker/vendor/github.com/choria-io/go-network-broker \
+		choria-io:go-protocol:v1.3.2:choria_io_go_protocol/vendor/github.com/choria-io/go-protocol \
+		choria-io:go-puppet:v0.0.1:choria_io_go_puppet/vendor/github.com/choria-io/go-puppet \
+		choria-io:go-security:v0.5.0:choria_io_go_security/vendor/github.com/choria-io/go-security \
+		choria-io:go-srvcache:v0.0.6:choria_io_go_srvcache/vendor/github.com/choria-io/go-srvcache \
+		choria-io:go-validator:v1.1.1:choria_io_go_validator/vendor/github.com/choria-io/go-validator \
+		choria-io:mcorpc-agent-provider:v0.7.1:choria_io_mcorpc_agent_provider/vendor/github.com/choria-io/mcorpc-agent-provider \
+		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
+		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/gopkg.in/fsnotify.v1 \
+		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
+		go-tomb:tomb:dd632973f1e7:go_tomb_tomb/vendor/gopkg.in/tomb.v1 \
+		go-yaml:yaml:v2.2.2:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
+		gofrs:uuid:v3.2.0:gofrs_uuid/vendor/github.com/gofrs/uuid \
+		gogo:protobuf:v1.2.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
+		golang:crypto:4def268fd1a4:golang_crypto/vendor/golang.org/x/crypto \
+		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
+		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
+		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
+		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
+		gosuri:uilive:v0.0.3:gosuri_uilive/vendor/github.com/gosuri/uilive \
+		gosuri:uiprogress:v0.0.1:gosuri_uiprogress/vendor/github.com/gosuri/uiprogress \
+		guptarohit:asciigraph:v0.4.1:guptarohit_asciigraph/vendor/github.com/guptarohit/asciigraph \
+		hpcloud:tail:v1.0.0:hpcloud_tail/vendor/github.com/hpcloud/tail \
+		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
+		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
+		looplab:fsm:v0.1.0:looplab_fsm/vendor/github.com/looplab/fsm \
+		mattn:go-colorable:v0.1.2:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.8:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
+		mgutz:ansi:9520e82c474b:mgutz_ansi/vendor/github.com/mgutz/ansi \
+		miekg:pkcs11:v1.0.2:miekg_pkcs11/vendor/github.com/miekg/pkcs11 \
+		mitchellh:go-homedir:v1.0.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
+		mitchellh:go-wordwrap:v1.0.0:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
+		nats-io:jwt:v0.2.14:nats_io_jwt/vendor/github.com/nats-io/jwt \
+		nats-io:nats-server:v2.0.4:nats_io_nats_server/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:v1.8.1:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nkeys:v0.1.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
+		nats-io:nsc:8a0ff64219e6:nats_io_nsc/vendor/github.com/nats-io/nsc \
+		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
+		nats-io:stan.go:v0.5.0:nats_io_stan_go/vendor/github.com/nats-io/stan.go \
+		onsi:ginkgo:v1.10.1:onsi_ginkgo/vendor/github.com/onsi/ginkgo \
+		onsi:gomega:v1.7.0:onsi_gomega/vendor/github.com/onsi/gomega \
+		pkg:errors:v0.8.1:pkg_errors/vendor/github.com/pkg/errors \
+		prometheus:client_golang:v1.1.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
+		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
+		prometheus:common:v0.6.0:prometheus_common/vendor/github.com/prometheus/common \
+		prometheus:procfs:v0.0.3:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		robfig:cron:v1.2.0:robfig_cron/vendor/github.com/robfig/cron \
+		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		tidwall:gjson:v1.3.2:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:match:v1.0.1:tidwall_match/vendor/github.com/tidwall/match \
+		tidwall:pretty:v1.0.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
+		xeipuuv:gojsonpointer:4e3ac2762d5f:xeipuuv_gojsonpointer/vendor/github.com/xeipuuv/gojsonpointer \
+		xeipuuv:gojsonreference:bd5ef7bd5415:xeipuuv_gojsonreference/vendor/github.com/xeipuuv/gojsonreference \
+		xeipuuv:gojsonschema:v1.1.0:xeipuuv_gojsonschema/vendor/github.com/xeipuuv/gojsonschema
+		#::v1.2.0:_/vendor/rsc.io/goversion
 
 USE_RC_SUBR=	choria-broker choria-server
 
@@ -74,20 +100,20 @@ post-patch:
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-server/' \
 		${WRKSRC}/packager/templates/debian/global/server.conf
 
-do-build:
-	@${MKDIR} ${WRKSRC}/out
-	@cd ${GO_WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-	    ${GO_CMD} generate
-	@cd ${GO_WRKSRC} && \
-	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-	    ${GO_CMD} build -v -x -ldflags '-X github.com/choria-io/go-choria/build.Version=${PORTVERSION}' \
-	    -o ${WRKSRC}/out/${PORTNAME}
+#do-build:
+#	@${MKDIR} ${WRKSRC}/out
+#	@cd ${GO_WRKSRC} && \
+#	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
+#	    ${GO_CMD} generate
+#	@cd ${GO_WRKSRC} && \
+#	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
+#	    ${GO_CMD} build -v -x -ldflags '-X github.com/choria-io/go-choria/build.Version=${PORTVERSION}' \
+#	    -o ${WRKSRC}/out/${PORTNAME}
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
-	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
-	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/server.conf ${STAGEDIR}${PREFIX}/etc/choria/server.conf.sample
-
+#do-install:
+#	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+#	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
+#	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
+#	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/server.conf ${STAGEDIR}${PREFIX}/etc/choria/server.conf.sample
+#
 .include <bsd.port.mk>
