@@ -1,6 +1,8 @@
-TIMESTAMP = 1568097353
+TIMESTAMP = 1568996617
 SHA256 (choria-io-go-choria-v0.12.0_GH0.tar.gz) = 333a3dac98927beb9dd61fb048f6dbb6feb3178d7e762a26895b52bf56cd998a
 SIZE (choria-io-go-choria-v0.12.0_GH0.tar.gz) = 145909
+SHA256 (AlecAivazis-survey-v1.7.0_GH0.tar.gz) = 18f3bee3d37b1e604825219cbc7530b0f64f234b6c8efe1581b7f467301d7fa1
+SIZE (AlecAivazis-survey-v1.7.0_GH0.tar.gz) = 979707
 SHA256 (AlecAivazis-survey-v2.0.2_GH0.tar.gz) = aa99bfcc7dbc9728dc682bddcaafc562a4f351dbee6e2255a7b6df8aff4e9f56
 SIZE (AlecAivazis-survey-v2.0.2_GH0.tar.gz) = 984882
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
@@ -137,3 +139,5 @@ SHA256 (xeipuuv-gojsonreference-bd5ef7bd5415_GH0.tar.gz) = f99765bc8692e620f8abc
 SIZE (xeipuuv-gojsonreference-bd5ef7bd5415_GH0.tar.gz) = 6958
 SHA256 (xeipuuv-gojsonschema-v1.1.0_GH0.tar.gz) = 4fa629186e89d3ec76a8e6ee531b1a5c64a688e0c5b82e5da86dc05c94b42581
 SIZE (xeipuuv-gojsonschema-v1.1.0_GH0.tar.gz) = 70883
+SHA256 (rsc-goversion-v1.2.0_GH0.tar.gz) = 65e9c181995ed8c9207ea08d79a148ab53307b7fad2172a5a0764d6aa393a98e
+SIZE (rsc-goversion-v1.2.0_GH0.tar.gz) = 8586

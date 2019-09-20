@@ -1,8 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-DISTVERSIONPREFIX=v
 PORTVERSION=	0.12.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
 MAINTAINER=	romain@FreeBSD.org
@@ -13,16 +13,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-BROKEN=		Does not build
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	choria-io
 GH_PROJECT=	go-choria
 
+		#AlecAivazis:survey:v1.7.0:alecaivazis_survey_v1/vendor/gopkg.in/AlecAivazis/survey.v1
 GH_TUPLE=	\
 		AlecAivazis:survey:v1.7.0:alecaivazis_survey/vendor/github.com/AlecAivazis/survey \
-		AlecAivazis:survey:v1.7.0:alecaivazis_survey/vendor/gopkg.in/AlecAivazis/survey.v1 \
-		AlecAivazis:survey:v2.0.2:alecaivazis_survey/vendor/github.com/AlecAivazis/survey/v2 \
+		AlecAivazis:survey:v2.0.2:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
@@ -89,31 +87,23 @@ GH_TUPLE=	\
 		uber-go:atomic:v1.4.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		xeipuuv:gojsonpointer:4e3ac2762d5f:xeipuuv_gojsonpointer/vendor/github.com/xeipuuv/gojsonpointer \
 		xeipuuv:gojsonreference:bd5ef7bd5415:xeipuuv_gojsonreference/vendor/github.com/xeipuuv/gojsonreference \
-		xeipuuv:gojsonschema:v1.1.0:xeipuuv_gojsonschema/vendor/github.com/xeipuuv/gojsonschema
-		#::v1.2.0:_/vendor/rsc.io/goversion
+		xeipuuv:gojsonschema:v1.1.0:xeipuuv_gojsonschema/vendor/github.com/xeipuuv/gojsonschema \
+		rsc:goversion:v1.2.0:rsc_goversion/vendor/rsc.io/goversion
 
 USE_RC_SUBR=	choria-broker choria-server
 
 post-patch:
+	${MKDIR} ${WRKSRC}/vendor/gopkg.in/AlecAivazis
+	${LN} -sf ${WRKSRC}/vendor/github.com/AlecAivazis/survey ${WRKSRC}/vendor/gopkg.in/AlecAivazis/survey.v1
+	${LN} -sf ${WRKSRC}/vendor/github.com/nats-io/nsc/cli/open_linux.go ${WRKSRC}/vendor/github.com/nats-io/nsc/cli/open_freebsd.go
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-broker/' \
 		${WRKSRC}/packager/templates/debian/global/broker.conf
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-server/' \
 		${WRKSRC}/packager/templates/debian/global/server.conf
 
-#do-build:
-#	@${MKDIR} ${WRKSRC}/out
-#	@cd ${GO_WRKSRC} && \
-#	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-#	    ${GO_CMD} generate
-#	@cd ${GO_WRKSRC} && \
-#	    ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPATH=${WRKSRC} \
-#	    ${GO_CMD} build -v -x -ldflags '-X github.com/choria-io/go-choria/build.Version=${PORTVERSION}' \
-#	    -o ${WRKSRC}/out/${PORTNAME}
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
+	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/server.conf ${STAGEDIR}${PREFIX}/etc/choria/server.conf.sample
 
-#do-install:
-#	${INSTALL_PROGRAM} ${WRKSRC}/out/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-#	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
-#	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
-#	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/server.conf ${STAGEDIR}${PREFIX}/etc/choria/server.conf.sample
-#
 .include <bsd.port.mk>
