@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	choria
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -24,19 +24,18 @@ GH_TUPLE=	\
 		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
 		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
 		alecthomas:units:c3de453c63f4:alecthomas_units/vendor/github.com/alecthomas/units \
-		apex:log:v1.1.1:apex_log/vendor/github.com/apex/log \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		choria-io:go-client:v0.5.0:choria_io_go_client/vendor/github.com/choria-io/go-client \
-		choria-io:go-config:v0.0.3:choria_io_go_config/vendor/github.com/choria-io/go-config \
+		choria-io:go-client:v0.5.1:choria_io_go_client/vendor/github.com/choria-io/go-client \
+		choria-io:go-config:v0.0.4:choria_io_go_config/vendor/github.com/choria-io/go-config \
 		choria-io:go-confkey:v1.3.0:choria_io_go_confkey/vendor/github.com/choria-io/go-confkey \
-		choria-io:go-lifecycle:v1.0.3:choria_io_go_lifecycle/vendor/github.com/choria-io/go-lifecycle \
+		choria-io:go-lifecycle:v1.0.4:choria_io_go_lifecycle/vendor/github.com/choria-io/go-lifecycle \
 		choria-io:go-network-broker:v1.3.1:choria_io_go_network_broker/vendor/github.com/choria-io/go-network-broker \
 		choria-io:go-protocol:v1.3.2:choria_io_go_protocol/vendor/github.com/choria-io/go-protocol \
 		choria-io:go-puppet:v0.0.1:choria_io_go_puppet/vendor/github.com/choria-io/go-puppet \
 		choria-io:go-security:v0.5.0:choria_io_go_security/vendor/github.com/choria-io/go-security \
 		choria-io:go-srvcache:v0.0.6:choria_io_go_srvcache/vendor/github.com/choria-io/go-srvcache \
 		choria-io:go-validator:v1.1.1:choria_io_go_validator/vendor/github.com/choria-io/go-validator \
-		choria-io:mcorpc-agent-provider:v0.7.1:choria_io_mcorpc_agent_provider/vendor/github.com/choria-io/mcorpc-agent-provider \
+		choria-io:mcorpc-agent-provider:v0.8.0:choria_io_mcorpc_agent_provider/vendor/github.com/choria-io/mcorpc-agent-provider \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/gopkg.in/fsnotify.v1 \
 		ghodss:yaml:v1.0.0:ghodss_yaml/vendor/github.com/ghodss/yaml \
@@ -48,7 +47,7 @@ GH_TUPLE=	\
 		golang:mock:v1.3.1:golang_mock/vendor/github.com/golang/mock \
 		golang:net:ca1201d0de80:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:cbf593c0f2f3:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:c3b328c6e5a7:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:shlex:c34317bd91bf:google_shlex/vendor/github.com/google/shlex \
 		gosuri:uilive:v0.0.3:gosuri_uilive/vendor/github.com/gosuri/uilive \
