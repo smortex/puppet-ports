@@ -100,6 +100,13 @@ post-patch:
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-server/' \
 		${WRKSRC}/packager/templates/debian/global/server.conf
 
+x-pre-build:
+	cd ${GO_WRKSRC} && ${GO_CMD} generate
+	@echo "---------------------------------------------------------"
+	@echo "patchtool -a ${WRKSRC}/plugin_*.go"
+	@echo "---------------------------------------------------------"
+	false
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria
 	${INSTALL_DATA} ${WRKSRC}/packager/templates/debian/global/broker.conf ${STAGEDIR}${PREFIX}/etc/choria/broker.conf.sample
