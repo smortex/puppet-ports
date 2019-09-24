@@ -8,5 +8,5 @@ If you use `ports-mgmt/portshaker`, you can use the following configuration to m
 
 ```
 main_ports_tree="/usr/ports"
-main_merge_from="ports github:smortex:puppet5!"
+main_merge_from="ports github:smortex:puppet-ports!"
 ```
