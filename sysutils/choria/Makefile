@@ -102,10 +102,11 @@ post-patch:
 
 x-pre-build:
 	cd ${GO_WRKSRC} && ${GO_CMD} generate
-	@echo "---------------------------------------------------------"
-	@echo "patchtool -a ${WRKSRC}/plugin_*.go"
-	@echo "---------------------------------------------------------"
-	false
+	@${ECHO_MSG} "-----------------------------------------------------------"
+	@${ECHO_MSG} "Plugins generated.  Make sure they are provided as patches:"
+	@${ECHO_MSG} "patchtool -a ${WRKSRC}/plugin_*.go"
+	@${ECHO_MSG} "-----------------------------------------------------------"
+	${FALSE}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/choria

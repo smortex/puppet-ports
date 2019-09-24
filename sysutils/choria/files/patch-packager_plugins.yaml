@@ -1,4 +1,4 @@
---- packager/plugins.yaml.orig
+--- packager/plugins.yaml.orig	2019-09-20 12:08:18 UTC
 +++ packager/plugins.yaml
 @@ -2,4 +2,3 @@
  golangmco: github.com/choria-io/mcorpc-agent-provider/mcorpc/golang
