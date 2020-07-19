@@ -1,13 +1,12 @@
---- plugin_1_externalmco.go.orig	2019-09-24 00:06:38 UTC
+--- /dev/null
 +++ plugin_1_externalmco.go
-@@ -0,0 +1,15 @@
-+// auto generated 2019-09-21 12:57:46.899869855 -1000 -10 m=+0.002999960
+@@ -0,0 +1,14 @@
++// auto generated 2020-07-18 14:36:22.390170464 -1000 -10 m=+6.276492193
 +package main
 +
 +import (
 +	"github.com/choria-io/go-choria/plugin"
-+	p "github.com/choria-io/mcorpc-agent-provider/mcorpc/external"
-+
++	p "github.com/choria-io/go-choria/providers/agent/mcorpc/external"
 +)
 +
 +func init() {
