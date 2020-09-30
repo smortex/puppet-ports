@@ -1,7 +1,7 @@
 --- /dev/null
 +++ plugin_3_rubymco.go
 @@ -0,0 +1,14 @@
-+// auto generated 2020-07-18 14:36:24.292996613 -1000 -10 m=+8.179318351
++// auto generated 2020-09-28 11:42:35.067195884 -1000 -10 m=+2.260774017
 +package main
 +
 +import (

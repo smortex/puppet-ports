@@ -1,7 +1,7 @@
 --- /dev/null
 +++ plugin_2_golangmco.go
 @@ -0,0 +1,14 @@
-+// auto generated 2020-07-18 14:36:23.316403099 -1000 -10 m=+7.202724815
++// auto generated 2020-09-28 11:42:34.321643234 -1000 -10 m=+1.515221354
 +package main
 +
 +import (

@@ -25,5 +25,6 @@ procname=%%PREFIX%%/bin/choria
 command_args="-p ${pidfile} ${procname} broker run ${choria_broker_options}"
 
 PATH="${PATH}:%%PREFIX%%/bin"
+export GODEBUG=x509ignoreCN=0
 
 run_rc_command "$1"

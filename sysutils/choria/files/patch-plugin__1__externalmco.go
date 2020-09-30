@@ -1,7 +1,7 @@
 --- /dev/null
 +++ plugin_1_externalmco.go
 @@ -0,0 +1,14 @@
-+// auto generated 2020-07-18 14:36:22.390170464 -1000 -10 m=+6.276492193
++// auto generated 2020-09-28 11:42:33.57430812 -1000 -10 m=+0.767886243
 +package main
 +
 +import (
