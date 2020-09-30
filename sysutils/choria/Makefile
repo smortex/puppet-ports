@@ -133,6 +133,8 @@ post-extract:
 	@${RLN} ${WRKSRC_nats_io_jwt_v2}/v2 ${WRKSRC}/vendor/github.com/nats-io/jwt/v2
 
 post-patch:
+	${REINPLACE_CMD} -e 's/var Version = ".*"/var Version = "${PORTVERSION}"/' \
+		${WRKSRC}/build/build.go
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-broker/' \
 		${WRKSRC}/packager/templates/debian/global/broker.conf
 	${REINPLACE_CMD} -e 's/{{cpkg_name}}/choria-server/' \
