@@ -1,3 +1,0 @@
-bin/choria
-@sample etc/choria/broker.conf.sample
-@sample etc/choria/server.conf.sample
