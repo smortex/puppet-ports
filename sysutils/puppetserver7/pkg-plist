@@ -10,7 +10,6 @@
 @sample %%ETCDIR%%/services.d/bootstrap.cfg.sample
 @sample %%ETCDIR%%/services.d/ca.cfg.sample
 @dir(,puppet,750) etc/puppet/code
-@dir(puppet,puppet,750) %%ETCDIR%%/ca
 %%DATADIR%%/puppet-server-release.jar
 @(,,755) %%DATADIR%%/cli/apps/ca
 @(,,755) %%DATADIR%%/cli/apps/foreground
@@ -27,4 +26,5 @@
 @dir(puppet,puppet,755) /var/puppet
 @dir(puppet,puppet,750) /var/puppet/server
 @dir(puppet,puppet,750) /var/puppet/server/data
+@dir(puppet,puppet,750) /var/puppetserver
 @dir(puppet,puppet,750) /var/run/puppetserver

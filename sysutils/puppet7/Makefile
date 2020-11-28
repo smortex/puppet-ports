@@ -81,12 +81,12 @@ post-patch:
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/modules|" \
-		-e "s|/etc/puppetlabs/puppetserver/ca|${LOCALBASE}/etc/puppetserver/ca|" \
+		-e "s|/etc/puppetlabs/puppetserver/ca|/var/puppetserver/ca|" \
 		-e "s|/opt/puppetlabs/puppet/vendor_modules|${ETCDIR}/vendor_modules|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/bin/gem|${LOCALBASE}/bin/gem|" \
 		${WRKSRC}/lib/puppet/provider/package/puppet_gem.rb
-	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|${ETCDIR}/ssl|" \
+	@${REINPLACE_CMD} -e "s|\$$confdir/ssl|/var/puppet/ssl|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|\.\./\.\./\.\./locales|../locales|" \
 		${WRKSRC}/lib/puppet/gettext/config.rb
@@ -98,7 +98,6 @@ do-install:
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
 	${MKDIR} ${STAGEDIR}${ETCDIR}/modules
-	${MKDIR} ${STAGEDIR}${ETCDIR}/ssl
 	${MKDIR} ${STAGEDIR}/var/puppet
 	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \

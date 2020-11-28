@@ -64,13 +64,13 @@ post-patch:
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/cli/apps
 	@${MKDIR} ${STAGEDIR}${DATADIR}/lib
-	@${MKDIR} ${STAGEDIR}${ETCDIR}/ca
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/conf.d
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/services.d
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/puppet/code
 	@${MKDIR} ${STAGEDIR}/var/log/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/puppet/server
 	@${MKDIR} ${STAGEDIR}/var/puppet/server/data
+	@${MKDIR} ${STAGEDIR}/var/puppetserver
 	@${MKDIR} ${STAGEDIR}/var/run/puppetserver
 	${INSTALL_DATA} ${WRKSRC}/puppet-server-release.jar ${STAGEDIR}${DATADIR}/puppet-server-release.jar
 	${INSTALL_DATA} ${WRKSRC}/ext/config/conf.d/global.conf ${STAGEDIR}${ETCDIR}/conf.d/global.conf.sample
