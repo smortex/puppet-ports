@@ -1,4 +1,4 @@
---- lib/puppetserver/ca/utils/config.rb.orig	2020-11-28 04:27:37 UTC
+--- lib/puppetserver/ca/utils/config.rb.orig	2020-11-28 01:14:43 UTC
 +++ lib/puppetserver/ca/utils/config.rb
 @@ -23,7 +23,7 @@ module Puppetserver
  
@@ -9,12 +9,14 @@
            else
              "#{ENV['HOME']}/.puppetlabs/etc/puppet"
            end
-@@ -34,11 +34,11 @@ module Puppetserver
+@@ -34,11 +34,13 @@ module Puppetserver
          end
  
          def self.default_ssldir(confdir = puppet_confdir)
 -          File.join(confdir, 'ssl')
-+          '/var/puppet/ssl'
++          res = File.join(confdir, 'ssl')
++          res = '/var/puppet/ssl' unless File.directory?(res)
++          res
          end
  
          def self.old_default_cadir(confdir = puppet_confdir)
